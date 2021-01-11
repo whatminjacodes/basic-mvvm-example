@@ -21,8 +21,7 @@ class MainFragment: Fragment() {
     // This property is only valid between onCreateView and
 // onDestroyView.
     private val binding get() = _binding!!
-
-
+    
     // Create a viewModel
     private val viewModel: MainViewModel by activityViewModels()
 
