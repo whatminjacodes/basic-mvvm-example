@@ -11,7 +11,7 @@ import com.minjee.basicmvvmexample.model.DataModel
  */
 class MainViewModel: ViewModel() {
 
-    // Create the model which contains data for out UI
+    // Create the model which contains data for our UI
     private val model = DataModel(textForUI = "Here's the updated text!")
 
     // Create MutableLiveData which MainFragment can subscribe to

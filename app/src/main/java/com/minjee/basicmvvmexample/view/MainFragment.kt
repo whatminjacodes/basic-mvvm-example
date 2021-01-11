@@ -17,11 +17,11 @@ import com.minjee.basicmvvmexample.viewmodel.MainViewModel
  *      - listens to viewModel for updates on UI
  */
 class MainFragment: Fragment() {
+
+    // View Binding
     private var _binding: FragmentMainBinding? = null
-    // This property is only valid between onCreateView and
-// onDestroyView.
     private val binding get() = _binding!!
-    
+
     // Create a viewModel
     private val viewModel: MainViewModel by activityViewModels()
 
@@ -30,8 +30,7 @@ class MainFragment: Fragment() {
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        //return inflater.inflate(R.layout.fragment_main, container, false)
-
+        // This is needed for view binding
         _binding = FragmentMainBinding.inflate(inflater, container, false)
         val view = binding.root
         return view
