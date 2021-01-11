@@ -5,4 +5,4 @@ Project contains MainActivity, MainFragment, MainViewModel and DataModel. MainAc
 
 Check out my blog post about this example project: 
 
-![Screenshot of the app](https://github.com/whatminjacodes/basic-mvvm-example/tree/main/screenshots/screenshot.png?raw=true)
+![Screenshot of the app](https://github.com/whatminjacodes/basic-mvvm-example/tree/main/screenshots/small-screenshot.png?raw=true)
