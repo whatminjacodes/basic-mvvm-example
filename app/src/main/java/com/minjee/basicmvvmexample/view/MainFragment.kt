@@ -8,9 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import com.minjee.basicmvvmexample.R
+import com.minjee.basicmvvmexample.databinding.FragmentMainBinding
 import com.minjee.basicmvvmexample.viewmodel.MainViewModel
-import kotlinx.android.synthetic.main.fragment_main.*
-
 
 /*
  *      MainFragment
@@ -18,16 +17,25 @@ import kotlinx.android.synthetic.main.fragment_main.*
  *      - listens to viewModel for updates on UI
  */
 class MainFragment: Fragment() {
+    private var _binding: FragmentMainBinding? = null
+    // This property is only valid between onCreateView and
+// onDestroyView.
+    private val binding get() = _binding!!
+
 
     // Create a viewModel
     private val viewModel: MainViewModel by activityViewModels()
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
+            inflater: LayoutInflater,
+            container: ViewGroup?,
+            savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_main, container, false)
+        //return inflater.inflate(R.layout.fragment_main, container, false)
+
+        _binding = FragmentMainBinding.inflate(inflater, container, false)
+        val view = binding.root
+        return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -37,15 +45,20 @@ class MainFragment: Fragment() {
         fragmentTextUpdateObserver()
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
     // Setup the button in our fragment to call getUpdatedText method in viewModel
     private fun setupClickListeners() {
-        fragmentButton.setOnClickListener { viewModel.getUpdatedText() }
+        binding.fragmentButton.setOnClickListener { viewModel.getUpdatedText() }
     }
 
     // Observer is waiting for viewModel to update our UI
     private fun fragmentTextUpdateObserver() {
         viewModel.uiTextLiveData.observe(viewLifecycleOwner, Observer { updatedText ->
-            fragmentTextView.text = updatedText
+            binding.fragmentTextView.text = updatedText
         })
     }
 }

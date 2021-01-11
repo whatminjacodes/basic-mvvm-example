@@ -29,6 +29,10 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    buildFeatures {
+        viewBinding true
+    }
 }
 
 dependencies {
@@ -50,5 +54,4 @@ dependencies {
 
     // fragments
     implementation "androidx.fragment:fragment-ktx:$fragments_version"
-    apply plugin: 'kotlin-android-extensions'
 }
