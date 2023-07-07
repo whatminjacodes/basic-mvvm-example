@@ -1,4 +1,6 @@
 # basic-mvvm-example
+Update: Upgraded the project libraries and Gradle version on July 2023.
+
 Simple example project to show how MVVM architecture works!
 
 Project contains MainActivity, MainFragment, MainViewModel and DataModel. MainActivity opens MainFragment which contains a text and one button. When that button is clicked, MainViewModel gets the updated text from DataModel and triggers an UI update in MainFragment.
