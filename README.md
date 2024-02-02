@@ -5,4 +5,6 @@ Project contains MainActivity, MainFragment, MainViewModel and DataModel. MainAc
 
 Check out my blog post about this example project: ![Dev.to blog post](https://dev.to/whatminjacodes/simple-example-of-mvvm-architecture-in-kotlin-4j5b)
 
+Test
+
 ![Screenshot of the app](https://github.com/whatminjacodes/basic-mvvm-example/tree/main/screenshots/small-screenshot.png?raw=true)
